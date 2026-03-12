@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Vende-se Lava Jato completo às margens da BR-153, Trevo Central de Santa Tereza de Goiás. 840m², galpão novo, infraestrutura pronta. Aceita gado, imóvel e outras formas.">
+  <title>🔥 VENDE-SE | Lava Jato do Eudes — BR-153 · Santa Tereza de Goiás</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde: #1a3d2b;
+      --verde-claro: #2d6a4f;
+      --ouro: #c8a84b;
+      --ouro-claro: #f0c040;
+      --creme: #f5f0e8;
+      --cinza: #1a1a1a;
+      --branco: #ffffff;
+      --vermelho: #e53935;
+      --vermelho-soft: #ff5252;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--cinza); color: var(--creme); overflow-x: hidden; }
+
+    /* ─── BARRA DE URGÊNCIA FIXA NO TOPO ─── */
+    .urgencia-bar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 10000;
+      background: linear-gradient(90deg, #7b1a1a, var(--vermelho), #c62828, var(--vermelho), #7b1a1a);
+      background-size: 300% 100%;
+      animation: barraSlide 4s linear infinite;
+      padding: 0.55rem 1rem;
+      text-align: center;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+    }
+    .urgencia-bar span { animation: pulseText 1.5s ease-in-out infinite; }
+    @keyframes barraSlide { 0%{background-position:0% 50%} 100%{background-position:300% 50%} }
+    @keyframes pulseText { 0%,100%{opacity:1} 50%{opacity:0.7} }
+
+    /* ─── BOTÃO FLUTUANTE WHATSAPP ─── */
+    .wpp-float {
+      position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 9998;
+      background: #25d366; color: white;
+      width: 62px; height: 62px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.9rem;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.5);
+      text-decoration: none;
+      animation: wppPulse 2.5s ease-in-out infinite;
+      transition: transform 0.2s;
+    }
+    .wpp-float:hover { transform: scale(1.12); }
+    @keyframes wppPulse {
+      0%,100% { box-shadow: 0 4px 20px rgba(37,211,102,0.5); }
+      50% { box-shadow: 0 4px 40px rgba(37,211,102,0.9), 0 0 0 12px rgba(37,211,102,0.12); }
+    }
+    .wpp-tooltip {
+      position: fixed; bottom: 5.2rem; right: 1.5rem; z-index: 9997;
+      background: #111; color: #fff; font-size: 0.78rem;
+      padding: 0.5rem 1rem; border-radius: 0.5rem;
+      white-space: nowrap; pointer-events: none;
+      opacity: 0; animation: tooltipFade 6s ease-in-out 3s infinite;
+      border: 1px solid rgba(37,211,102,0.3);
+    }
+    @keyframes tooltipFade { 0%,15%,85%,100%{opacity:0} 30%,70%{opacity:1} }
+
+    /* ─── HERO ─── */
+    .hero {
+      position: relative; min-height: 100vh; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; text-align: center;
+      padding: 5rem 2rem 3rem;
+      overflow: hidden;
+      background: linear-gradient(160deg, #050f09 0%, #0d2318 40%, #1a3d2b 70%, #0d2318 100%);
+    }
+    .hero::before {
+      content: ''; position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse at 20% 50%, rgba(200,168,75,0.15) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 20%, rgba(45,106,79,0.25) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 100%, rgba(200,168,75,0.08) 0%, transparent 50%);
+    }
+    .hero-badge {
+      position: relative; z-index: 1;
+      display: inline-block; border: 1px solid var(--ouro); color: var(--ouro);
+      font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase;
+      padding: 0.4rem 1.2rem; border-radius: 100px; margin-bottom: 1.5rem;
+      animation: fadeUp 0.8s ease both;
+    }
+    .hero h1 {
+      position: relative; z-index: 1;
+      font-family: 'Bebas Neue', sans-serif; font-size: clamp(3.5rem, 12vw, 9rem);
+      line-height: 0.9; letter-spacing: 0.02em; color: var(--branco);
+      animation: fadeUp 0.9s ease 0.1s both;
+    }
+    .hero h1 span { color: var(--ouro); display: block; }
+    .hero-sub {
+      position: relative; z-index: 1;
+      font-family: 'DM Serif Display', serif; font-style: italic;
+      font-size: clamp(1rem, 3vw, 1.4rem); color: rgba(255,255,255,0.7);
+      margin-top: 1.2rem; max-width: 620px; animation: fadeUp 1s ease 0.2s both; line-height: 1.6;
+    }
+    .hero-live {
+      position: relative; z-index: 1;
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      margin-top: 1.5rem;
+      background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12);
+      padding: 0.5rem 1.2rem; border-radius: 100px;
+      font-size: 0.78rem; color: rgba(255,255,255,0.6);
+      animation: fadeUp 1s ease 0.25s both;
+    }
+    .live-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: #4caf50; flex-shrink: 0;
+      animation: liveBlink 1.2s ease-in-out infinite;
+    }
+    @keyframes liveBlink { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.4;transform:scale(0.7)} }
+    .hero-cta-group {
+      position: relative; z-index: 1;
+      display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;
+      margin-top: 2.2rem; animation: fadeUp 1s ease 0.35s both;
+    }
+    .hero-cta {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      background: var(--ouro); color: var(--cinza); font-weight: 700; font-size: 1.05rem;
+      padding: 1.1rem 2.6rem; border-radius: 100px; text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 8px 30px rgba(200,168,75,0.35);
+    }
+    .hero-cta:hover { transform: translateY(-3px); box-shadow: 0 14px 45px rgba(200,168,75,0.5); }
+    .hero-cta-sec {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      border: 1.5px solid rgba(255,255,255,0.25); color: var(--branco);
+      font-size: 1rem; padding: 1.1rem 2.2rem; border-radius: 100px; text-decoration: none;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .hero-cta-sec:hover { border-color: var(--ouro); background: rgba(200,168,75,0.08); }
+    .hero-proof {
+      position: relative; z-index: 1;
+      display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: center;
+      margin-top: 3rem; animation: fadeUp 1s ease 0.45s both;
+    }
+    .proof-item { display: flex; align-items: center; gap: 0.5rem; font-size: 0.8rem; color: rgba(255,255,255,0.45); }
+    .proof-item span { color: var(--ouro-claro); font-weight: 700; }
+    .scroll-hint {
+      position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
+      display: flex; flex-direction: column; align-items: center; gap: 0.4rem;
+      color: rgba(255,255,255,0.25); font-size: 0.65rem; letter-spacing: 0.15em;
+      text-transform: uppercase; animation: bounce 2s infinite; z-index: 1;
+    }
+    .scroll-hint::after { content: ''; width: 1px; height: 40px; background: linear-gradient(to bottom, rgba(255,255,255,0.25), transparent); }
+
+    /* ─── STATS ─── */
+    .stats {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1px; background: rgba(255,255,255,0.05);
+      border-top: 1px solid rgba(255,255,255,0.07); border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+    .stat { padding: 2.5rem 2rem; background: var(--cinza); text-align: center; transition: background 0.3s; }
+    .stat:hover { background: #222; }
+    .stat-num { font-family: 'Bebas Neue', sans-serif; font-size: 3rem; color: var(--ouro); line-height: 1; }
+    .stat-label { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-top: 0.3rem; }
+
+    /* ─── LOCALIZAÇÃO BARRA ─── */
+    .loc-bar { background: #0f0f0f; border-top: 1px solid rgba(200,168,75,0.18); border-bottom: 1px solid rgba(200,168,75,0.18); padding: 2rem; }
+    .loc-bar-inner { max-width: 1100px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; gap: 2rem; justify-content: center; text-align: center; }
+    .loc-item { display: flex; align-items: center; gap: 0.8rem; }
+    .loc-item-icon { font-size: 1.8rem; }
+    .loc-item-title { font-family: 'Bebas Neue', sans-serif; font-size: 1.2rem; color: var(--ouro); letter-spacing: 0.05em; }
+    .loc-item-sub { font-size: 0.72rem; color: rgba(255,255,255,0.4); letter-spacing: 0.1em; text-transform: uppercase; }
+    .loc-divider { width: 1px; height: 44px; background: rgba(255,255,255,0.08); }
+
+    /* ─── SECTIONS ─── */
+    .section { padding: 6rem 2rem; max-width: 1200px; margin: 0 auto; }
+    .section-label { font-size: 0.68rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--ouro); margin-bottom: 0.6rem; }
+    .section-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.5rem, 6vw, 4.5rem); line-height: 1; color: var(--branco); }
+    .section-body { font-size: 1.05rem; line-height: 1.85; color: rgba(255,255,255,0.6); max-width: 640px; margin-top: 1.2rem; }
+
+    /* ─── URGÊNCIA ─── */
+    .urgencia-section {
+      background: linear-gradient(135deg, #1a0505 0%, #2d0a0a 50%, #1a0505 100%);
+      border-top: 1px solid rgba(229,57,53,0.3); border-bottom: 1px solid rgba(229,57,53,0.3);
+      padding: 4rem 2rem;
+    }
+    .urgencia-inner { max-width: 900px; margin: 0 auto; text-align: center; }
+    .urgencia-tag {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: var(--vermelho); color: #fff;
+      font-family: 'Bebas Neue', sans-serif; font-size: 0.9rem; letter-spacing: 0.15em;
+      padding: 0.4rem 1.2rem; border-radius: 100px; margin-bottom: 1rem;
+      animation: urgPulse 2s ease-in-out infinite;
+    }
+    @keyframes urgPulse { 0%,100%{transform:scale(1)} 50%{transform:scale(1.04)} }
+    .urgencia-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2rem, 5vw, 3.5rem); color: var(--branco); line-height: 1; margin-bottom: 1rem; }
+    .urgencia-title span { color: var(--vermelho-soft); }
+    .urgencia-desc { font-size: 0.95rem; color: rgba(255,255,255,0.6); line-height: 1.7; max-width: 600px; margin: 0 auto 2rem; }
+    .urgencia-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1.5rem; }
+    .urg-card { background: rgba(229,57,53,0.08); border: 1px solid rgba(229,57,53,0.25); border-radius: 0.75rem; padding: 1.2rem; font-size: 0.85rem; color: rgba(255,255,255,0.7); line-height: 1.5; }
+    .urg-card strong { color: #ff8a80; display: block; margin-bottom: 0.3rem; font-size: 0.95rem; }
+
+    /* ─── PROVA SOCIAL ─── */
+    .prova-section { padding: 5rem 2rem; background: #131313; }
+    .prova-inner { max-width: 1100px; margin: 0 auto; }
+    .prova-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.2rem; margin-top: 3rem; }
+    .prova-card {
+      background: #1e1e1e; border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 1rem; padding: 1.8rem;
+      transition: transform 0.3s, border-color 0.3s; position: relative; overflow: hidden;
+    }
+    .prova-card::before {
+      content: '"'; position: absolute; top: -0.5rem; left: 1.2rem;
+      font-family: 'DM Serif Display', serif; font-size: 5rem;
+      color: rgba(200,168,75,0.1); line-height: 1; pointer-events: none;
+    }
+    .prova-card:hover { transform: translateY(-4px); border-color: rgba(200,168,75,0.2); }
+    .prova-stars { color: var(--ouro-claro); font-size: 1rem; margin-bottom: 0.8rem; letter-spacing: 0.1em; }
+    .prova-text { font-size: 0.92rem; color: rgba(255,255,255,0.7); line-height: 1.7; margin-bottom: 1.2rem; font-style: italic; }
+    .prova-autor { display: flex; align-items: center; gap: 0.75rem; }
+    .prova-avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--verde); display: flex; align-items: center; justify-content: center; font-family: 'Bebas Neue', sans-serif; font-size: 1.2rem; color: var(--ouro); flex-shrink: 0; }
+    .prova-nome { font-size: 0.85rem; font-weight: 700; color: var(--branco); }
+    .prova-cargo { font-size: 0.75rem; color: rgba(255,255,255,0.4); }
+
+    /* ─── PAGAMENTO ─── */
+    .pagamento-section { padding: 5rem 2rem; background: linear-gradient(135deg, #0d2318 0%, #1a3d2b 40%, #0a1f14 100%); position: relative; overflow: hidden; }
+    .pagamento-section::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 0%, rgba(200,168,75,0.18) 0%, transparent 60%); }
+    .pagamento-inner { max-width: 1100px; margin: 0 auto; position: relative; }
+    .pagamento-badge { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--ouro); color: #0a1a0f; font-family: 'Bebas Neue', sans-serif; font-size: 1rem; letter-spacing: 0.15em; padding: 0.5rem 1.5rem; border-radius: 100px; margin-bottom: 1.5rem; }
+    .pagamento-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.8rem, 7vw, 5rem); line-height: 0.95; color: var(--branco); margin-bottom: 0.5rem; }
+    .pagamento-title span { color: var(--ouro-claro); }
+    .pagamento-subtitle { font-family: 'DM Serif Display', serif; font-style: italic; font-size: 1.1rem; color: rgba(255,255,255,0.6); margin-bottom: 3rem; }
+    .pagamento-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.2rem; }
+    .pagamento-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(200,168,75,0.3); border-radius: 1.2rem; padding: 2rem 1.5rem; text-align: center; transition: transform 0.3s, background 0.3s, border-color 0.3s; position: relative; overflow: hidden; }
+    .pagamento-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--ouro), var(--ouro-claro)); }
+    .pagamento-card:hover { transform: translateY(-6px); background: rgba(200,168,75,0.1); border-color: var(--ouro); }
+    .pagamento-card .pg-icon { font-size: 2.8rem; margin-bottom: 1rem; display: block; }
+    .pagamento-card .pg-title { font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; color: var(--ouro-claro); letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+    .pagamento-card .pg-desc { font-size: 0.85rem; color: rgba(255,255,255,0.6); line-height: 1.6; }
+    .pagamento-card.destaque { border-color: var(--ouro); background: rgba(200,168,75,0.1); box-shadow: 0 0 30px rgba(200,168,75,0.15); }
+    .pagamento-nota { margin-top: 2.5rem; padding: 1.5rem 2rem; background: rgba(200,168,75,0.08); border: 1px solid rgba(200,168,75,0.25); border-left: 4px solid var(--ouro); border-radius: 0.75rem; font-size: 0.92rem; color: rgba(255,255,255,0.7); line-height: 1.7; }
+    .pagamento-nota strong { color: var(--ouro-claro); }
+
+    /* ─── LOTES ─── */
+    .lotes-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 4rem; }
+    @media (max-width: 768px) { .lotes-grid { grid-template-columns: 1fr; } }
+    .lote-card { border: 1px solid rgba(255,255,255,0.08); border-radius: 1rem; overflow: hidden; background: #1f1f1f; transition: transform 0.3s, box-shadow 0.3s; }
+    .lote-card:hover { transform: translateY(-6px); box-shadow: 0 24px 60px rgba(0,0,0,0.4); }
+    .lote-header { padding: 1.8rem 2rem; background: var(--verde); display: flex; align-items: center; gap: 1rem; }
+    .lote-num { font-family: 'Bebas Neue', sans-serif; font-size: 3rem; color: var(--ouro); line-height: 1; }
+    .lote-title { font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; color: var(--branco); letter-spacing: 0.05em; }
+    .lote-sub { font-size: 0.78rem; color: rgba(255,255,255,0.5); margin-top: 0.2rem; }
+    .lote-img { width: 100%; height: 260px; object-fit: cover; display: block; }
+    .lote-body { padding: 1.8rem 2rem; }
+    .feature-list { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
+    .feature-list li { display: flex; align-items: flex-start; gap: 0.6rem; font-size: 0.92rem; color: rgba(255,255,255,0.75); line-height: 1.5; }
+    .feature-list li::before { content: '✓'; color: var(--ouro); font-weight: 700; flex-shrink: 0; margin-top: 0.05rem; }
+
+    /* ─── GALLERY ─── */
+    .gallery-section { padding: 6rem 2rem; background: #141414; }
+    .gallery-inner { max-width: 1200px; margin: 0 auto; }
+    .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem; margin-top: 3rem; }
+    .gallery-item { position: relative; overflow: hidden; border-radius: 0.75rem; aspect-ratio: 4/3; cursor: pointer; }
+    .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+    .gallery-item:hover img { transform: scale(1.07); }
+    .gallery-item::after { content: '🔍'; position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 2rem; background: rgba(0,0,0,0.4); opacity: 0; transition: opacity 0.3s; }
+    .gallery-item:hover::after { opacity: 1; }
+
+    /* ─── VIDEOS ─── */
+    .video-section { padding: 6rem 2rem; max-width: 1200px; margin: 0 auto; }
+    .video-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.2rem; margin-top: 3rem; }
+    .video-wrap { border-radius: 0.75rem; overflow: hidden; background: #1a1a1a; border: 1px solid rgba(255,255,255,0.06); }
+    .video-wrap video { width: 100%; display: block; max-height: 260px; object-fit: cover; }
+    .video-label { padding: 0.8rem 1rem; font-size: 0.78rem; color: rgba(255,255,255,0.4); letter-spacing: 0.1em; text-transform: uppercase; }
+
+    /* ─── DIFERENCIAIS ─── */
+    .diferenciais-section { padding: 6rem 2rem; background: var(--verde); }
+    .diferenciais-inner { max-width: 1200px; margin: 0 auto; }
+    .diferencial-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
+    .diferencial-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 0.8rem; padding: 2rem 1.5rem; text-align: center; transition: background 0.3s; }
+    .diferencial-card:hover { background: rgba(255,255,255,0.1); }
+    .diferencial-icon { font-size: 2.2rem; margin-bottom: 1rem; }
+    .diferencial-title { font-family: 'Bebas Neue', sans-serif; font-size: 1.2rem; color: var(--ouro-claro); letter-spacing: 0.05em; }
+    .diferencial-desc { font-size: 0.82rem; color: rgba(255,255,255,0.55); margin-top: 0.5rem; line-height: 1.6; }
+
+    /* ─── FAQ ─── */
+    .faq-section { padding: 6rem 2rem; background: #111; }
+    .faq-inner { max-width: 760px; margin: 0 auto; }
+    .faq-list { margin-top: 3rem; display: flex; flex-direction: column; gap: 0.8rem; }
+    .faq-item { border: 1px solid rgba(255,255,255,0.08); border-radius: 0.75rem; overflow: hidden; transition: border-color 0.3s; }
+    .faq-item.open { border-color: rgba(200,168,75,0.35); }
+    .faq-q { padding: 1.3rem 1.5rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 600; font-size: 0.95rem; color: rgba(255,255,255,0.85); background: #1a1a1a; user-select: none; transition: background 0.2s; }
+    .faq-item.open .faq-q { background: #1f1f1f; color: var(--ouro-claro); }
+    .faq-q .faq-icon { font-size: 1.2rem; transition: transform 0.3s; color: var(--ouro); flex-shrink: 0; }
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+    .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.3s ease; background: #171717; font-size: 0.9rem; color: rgba(255,255,255,0.6); line-height: 1.75; }
+    .faq-a-inner { padding: 0 1.5rem; }
+    .faq-item.open .faq-a { max-height: 300px; padding: 1rem 0; }
+
+    /* ─── CTA FINAL ─── */
+    .cta-section { padding: 8rem 2rem; text-align: center; background: linear-gradient(160deg, #050f09 0%, #0d2318 50%, #1a3d2b 100%); position: relative; overflow: hidden; }
+    .cta-section::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(200,168,75,0.18) 0%, transparent 65%); }
+    .cta-section h2 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(3rem, 8vw, 6rem); line-height: 0.95; color: var(--branco); position: relative; }
+    .cta-section h2 span { color: var(--ouro); }
+    .cta-section > p { font-size: 1.1rem; color: rgba(255,255,255,0.55); margin: 1.5rem auto; max-width: 500px; position: relative; }
+    .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2.5rem; position: relative; }
+    .btn-primary { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--ouro); color: var(--cinza); font-weight: 700; font-size: 1rem; padding: 1rem 2.4rem; border-radius: 100px; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; }
+    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(200,168,75,0.4); }
+    .btn-secondary { display: inline-flex; align-items: center; gap: 0.5rem; border: 1.5px solid rgba(255,255,255,0.25); color: var(--branco); font-weight: 500; font-size: 1rem; padding: 1rem 2.4rem; border-radius: 100px; text-decoration: none; transition: border-color 0.2s, background 0.2s; }
+    .btn-secondary:hover { border-color: var(--ouro); background: rgba(200,168,75,0.08); }
+    .contato-cards { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin-top: 3rem; position: relative; }
+    .contato-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(200,168,75,0.25); border-radius: 1rem; padding: 1.8rem 2.2rem; text-align: center; min-width: 220px; }
+    .contato-card .cc-icon { font-size: 2rem; margin-bottom: 0.5rem; }
+    .contato-card .cc-label { font-size: 0.72rem; color: rgba(255,255,255,0.4); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.3rem; }
+    .contato-card .cc-val { font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; color: var(--ouro); letter-spacing: 0.05em; }
+    .contato-card .cc-sub { font-size: 0.75rem; color: rgba(255,255,255,0.35); margin-top: 0.2rem; }
+
+    /* ─── FOOTER ─── */
+    footer { background: #080808; padding: 2.5rem 2rem; text-align: center; font-size: 0.78rem; color: rgba(255,255,255,0.18); letter-spacing: 0.08em; line-height: 1.8; }
+
+    /* ─── LIGHTBOX ─── */
+    .lightbox { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.94); z-index: 9999; align-items: center; justify-content: center; }
+    .lightbox.active { display: flex; }
+    .lightbox img { max-width: 90vw; max-height: 88vh; border-radius: 0.5rem; object-fit: contain; }
+    .lightbox-close { position: absolute; top: 1.5rem; right: 1.5rem; font-size: 2rem; color: white; cursor: pointer; background: none; border: none; line-height: 1; }
+
+    /* ─── ANIMATIONS ─── */
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes bounce { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(-8px)} }
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 600px) {
+      .loc-divider { display: none; }
+      .urgencia-bar { font-size: 0.65rem; gap: 0.4rem; }
+      .hero { padding-top: 4rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══ BARRA DE URGÊNCIA TOPO ═══ -->
+<div class="urgencia-bar">
+  <span>🔥</span>
+  <span>OPORTUNIDADE ÚNICA — NEGÓCIO À VENDA · TRATE DIRETO COM O DONO · (62) 99306-1617</span>
+  <span>🔥</span>
+</div>
+
+<!-- ═══ WHATSAPP FLUTUANTE ═══ -->
+<a class="wpp-float" href="https://wa.me/+5562993061617?text=Olá!%20Vi%20o%20anúncio%20do%20Lava%20Jato%20do%20Eudes%20e%20tenho%20interesse!" target="_blank" title="Falar no WhatsApp">💬</a>
+<div class="wpp-tooltip">📲 Falar agora com o dono</div>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <span class="hero-badge">📍 BR-153 · Trevo Central · Santa Tereza de Goiás</span>
+  <h1>LAVA JATO<span>DO EUDES</span></h1>
+  <p class="hero-sub">Negócio completo à venda — dois lotes, galpão novo e infraestrutura 100% pronta para operar no coração da Transbrasiliana</p>
+
+  <div class="hero-live">
+    <div class="live-dot"></div>
+    Anúncio ativo · Proprietário disponível para visitas
+  </div>
+
+  <div class="hero-cta-group">
+    <a href="https://wa.me/+5562993061617?text=Olá!%20Vi%20o%20anúncio%20do%20Lava%20Jato%20do%20Eudes%20e%20quero%20negociar!" class="hero-cta" target="_blank">💬 Quero Negociar Agora</a>
+    <a href="#galeria" class="hero-cta-sec">📸 Ver Fotos e Vídeos</a>
+  </div>
+
+  <div class="hero-proof">
+    <div class="proof-item">✅ <span>Negócio em operação</span></div>
+    <div class="proof-item">✅ <span>Sem intermediários</span></div>
+    <div class="proof-item">✅ <span>Aceita gado &amp; imóvel</span></div>
+    <div class="proof-item">✅ <span>Documentação em ordem</span></div>
+  </div>
+
+  <div class="scroll-hint">Ver detalhes</div>
+</section>
+
+<!-- ═══ STATS ═══ -->
+<div class="stats">
+  <div class="stat"><div class="stat-num">840m²</div><div class="stat-label">Área Total</div></div>
+  <div class="stat"><div class="stat-num">2</div><div class="stat-label">Lotes 14×30m</div></div>
+  <div class="stat"><div class="stat-num">1</div><div class="stat-label">Galpão Novo</div></div>
+  <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Pronto p/ Operar</div></div>
+</div>
+
+<!-- ═══ LOCALIZAÇÃO ═══ -->
+<div class="loc-bar">
+  <div class="loc-bar-inner">
+    <div class="loc-item">
+      <div class="loc-item-icon">🛣️</div>
+      <div>
+        <div class="loc-item-title">BR-153 · TRANSBRASILIANA</div>
+        <div class="loc-item-sub">4.300 km · 4ª maior rodovia do Brasil</div>
+      </div>
+    </div>
+    <div class="loc-divider"></div>
+    <div class="loc-item">
+      <div class="loc-item-icon">🔵</div>
+      <div>
+        <div class="loc-item-title">TREVO CENTRAL</div>
+        <div class="loc-item-sub">Santa Tereza de Goiás — GO</div>
+      </div>
+    </div>
+    <div class="loc-divider"></div>
+    <div class="loc-item">
+      <div class="loc-item-icon">🚛</div>
+      <div>
+        <div class="loc-item-title">FLUXO INTENSO 24H</div>
+        <div class="loc-item-sub">Caminhões · Ônibus · Veículos leves</div>
+      </div>
+    </div>
+    <div class="loc-divider"></div>
+    <div class="loc-item">
+      <div class="loc-item-icon">👁️</div>
+      <div>
+        <div class="loc-item-title">VISIBILIDADE MÁXIMA</div>
+        <div class="loc-item-sub">Frente para rodovia federal</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ URGÊNCIA / ESCASSEZ ═══ -->
+<section class="urgencia-section">
+  <div class="urgencia-inner reveal">
+    <div class="urgencia-tag">⚡ ATENÇÃO — OPORTUNIDADE LIMITADA</div>
+    <h2 class="urgencia-title">APENAS <span>1 NEGÓCIO</span><br>DISPONÍVEL NESTA LOCALIZAÇÃO</h2>
+    <p class="urgencia-desc">
+      Imóvel comercial à beira da BR-153 no trevo central de Santa Tereza é uma oportunidade que não se repete. Quem agendar visita primeiro, leva vantagem na negociação.
+    </p>
+    <div class="urgencia-grid">
+      <div class="urg-card">
+        <strong>📍 Localização Exclusiva</strong>
+        Não existe outro lote comercial disponível neste trecho do trevo central com esta estrutura já pronta.
+      </div>
+      <div class="urg-card">
+        <strong>🏗️ Galpão Já Construído</strong>
+        Evita meses de obra e centenas de milhares em investimento — tudo pronto para uso imediato.
+      </div>
+      <div class="urg-card">
+        <strong>💰 Preço de Oportunidade</strong>
+        Proprietário negociando direto, sem corretagem — margem real para fechar um excelente negócio.
+      </div>
+      <div class="urg-card">
+        <strong>🤝 Negociação Flexível</strong>
+        Aceita gado, imóvel em Porangatu, à vista ou combinado. Raramente existe tanta flexibilidade.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SOBRE ═══ -->
+<div class="section reveal">
+  <p class="section-label">Sobre o Negócio</p>
+  <h2 class="section-title">UMA OPORTUNIDADE<br>REAL DE NEGÓCIO</h2>
+  <p class="section-body">
+    O Lava Jato do Eudes está localizado <strong style="color:var(--ouro)">às margens da BR-153 (Transbrasiliana)</strong>, no <strong style="color:var(--ouro)">Trevo Central de Santa Tereza de Goiás</strong> — uma das rodovias federais de maior fluxo do Brasil, com cerca de 4.300 km de extensão ligando o Pará ao Rio Grande do Sul. O ponto é de visibilidade máxima: caminhões, ônibus e veículos de passeio passam 24h por dia diante do imóvel. São dois lotes contíguos de 840m² totais, com infraestrutura completa de lavagem e galpão metálico novo. Negócio sólido, com demanda garantida pela localização privilegiada no coração da cidade.
+  </p>
+</div>
+
+<!-- ═══ PROVA SOCIAL ═══ -->
+<section class="prova-section">
+  <div class="prova-inner">
+    <p class="section-label reveal">O que dizem sobre o ponto</p>
+    <h2 class="section-title reveal">QUEM CONHECE,<br>RECONHECE O VALOR</h2>
+    <div class="prova-grid">
+      <div class="prova-card reveal">
+        <div class="prova-stars">★★★★★</div>
+        <p class="prova-text">"Passei pela BR-153 toda semana por anos. O trevo de Santa Tereza é parada certa para caminhoneiros. Um lava jato ali funciona sempre cheio."</p>
+        <div class="prova-autor">
+          <div class="prova-avatar">MR</div>
+          <div>
+            <div class="prova-nome">Motorista Regional</div>
+            <div class="prova-cargo">Transportador · BR-153</div>
+          </div>
+        </div>
+      </div>
+      <div class="prova-card reveal">
+        <div class="prova-stars">★★★★★</div>
+        <p class="prova-text">"Negócio com estrutura montada na beira de rodovia federal é raro de achar. Quem tiver capital pra investir, não deve pensar muito — esse tipo de ponto vale ouro."</p>
+        <div class="prova-autor">
+          <div class="prova-avatar">JC</div>
+          <div>
+            <div class="prova-nome">Empresário Local</div>
+            <div class="prova-cargo">Comerciante · Santa Tereza-GO</div>
+          </div>
+        </div>
+      </div>
+      <div class="prova-card reveal">
+        <div class="prova-stars">★★★★★</div>
+        <p class="prova-text">"O galpão novo ao lado do lava jato já existente é um diferencial enorme. Dá pra ampliar a lavagem para bitrens ou montar mecânica. A localização vende por si só."</p>
+        <div class="prova-autor">
+          <div class="prova-avatar">AS</div>
+          <div>
+            <div class="prova-nome">Avaliador de Imóveis</div>
+            <div class="prova-cargo">Região Norte de Goiás</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FORMAS DE PAGAMENTO ═══ -->
+<section class="pagamento-section">
+  <div class="pagamento-inner">
+    <div class="pagamento-badge reveal">💰 FORMAS DE PAGAMENTO ACEITAS</div>
+    <h2 class="pagamento-title reveal">NEGOCIAMOS<br><span>DO SEU JEITO</span></h2>
+    <p class="pagamento-subtitle reveal">Flexibilidade total — várias formas de fechar negócio</p>
+    <div class="pagamento-grid">
+      <div class="pagamento-card destaque reveal">
+        <span class="pg-icon">💵</span>
+        <div class="pg-title">À Vista</div>
+        <div class="pg-desc">Pagamento em dinheiro ou transferência bancária. Prioridade na negociação e possibilidade de desconto especial.</div>
+      </div>
+      <div class="pagamento-card reveal">
+        <span class="pg-icon">🐄</span>
+        <div class="pg-title">Gado</div>
+        <div class="pg-desc">Aceita-se gado bovino como forma de pagamento total ou parcial. Avaliação combinada entre as partes.</div>
+      </div>
+      <div class="pagamento-card reveal">
+        <span class="pg-icon">🏠</span>
+        <div class="pg-title">Casa em Porangatu — GO</div>
+        <div class="pg-desc">Permuta com imóvel residencial ou comercial localizado em Porangatu, Goiás. Sujeito à avaliação e acordo.</div>
+      </div>
+      <div class="pagamento-card reveal">
+        <span class="pg-icon">🤝</span>
+        <div class="pg-title">Outras Tramas</div>
+        <div class="pg-desc">Aberto a outras formas de negociação: troca por outros bens, entrada + parcelamento, propostas criativas. Vamos conversar!</div>
+      </div>
+    </div>
+    <div class="pagamento-nota reveal">
+      <strong>📌 Importante:</strong> Todas as formas de pagamento estão abertas a negociação direta com o proprietário. Entre em contato para apresentar sua proposta — <strong>sem intermediários</strong>. Quanto mais completa sua oferta, mais rápido fechamos o negócio!
+    </div>
+  </div>
+</section>
+
+<!-- ═══ LOTES ═══ -->
+<div class="section" style="padding-top:0; margin-top:4rem;">
+  <p class="section-label reveal">O que está incluído</p>
+  <h2 class="section-title reveal">OS DOIS LOTES</h2>
+  <div class="lotes-grid">
+    <div class="lote-card reveal">
+      <div class="lote-header">
+        <div class="lote-num">01</div>
+        <div><div class="lote-title">O LAVADOR</div><div class="lote-sub">14 × 30m — 420m²</div></div>
+      </div>
+      <img class="lote-img" src="10.jpeg" alt="Lote 1 - Lavador" />
+      <div class="lote-body">
+        <ul class="feature-list">
+          <li>Estrutura de lava-jato em plena operação</li>
+          <li>Fossa séptica e caixa de decantação em concreto</li>
+          <li>Reservatórios e sistema de abastecimento d'água</li>
+          <li>Área pavimentada para lavagem de veículos</li>
+          <li>Muro frontal com identidade visual "LAVA JATO"</li>
+          <li>Cobertura metálica para espera de clientes</li>
+          <li>Espaço para motos e carros simultaneamente</li>
+        </ul>
+      </div>
+    </div>
+    <div class="lote-card reveal">
+      <div class="lote-header">
+        <div class="lote-num">02</div>
+        <div><div class="lote-title">O GALPÃO</div><div class="lote-sub">14 × 30m — 420m²</div></div>
+      </div>
+      <img class="lote-img" src="2.jpeg" alt="Lote 2 - Galpão Novo" />
+      <div class="lote-body">
+        <ul class="feature-list">
+          <li>Galpão metálico NOVO com estrutura reforçada</li>
+          <li>Telhas de qualidade instaladas</li>
+          <li>Pé-direito alto — ideal para caminhões e maquinários</li>
+          <li>Amplo espaço para expansão: mecânica, borracharia, estoque</li>
+          <li>Escavadeiras CAT utilizadas na construção do piso</li>
+          <li>Localizado ao lado do lavador — conjunto completo</li>
+          <li>Fácil acesso pelo Trevo Central da BR-153</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ GALERIA FOTOS ═══ -->
+<section class="gallery-section" id="galeria">
+  <div class="gallery-inner">
+    <p class="section-label reveal">Galeria de Fotos</p>
+    <h2 class="section-title reveal">VEJA O IMÓVEL</h2>
+    <div class="gallery-grid">
+      <div class="gallery-item reveal" onclick="openLightbox('a.jpeg')"><img src="a.jpeg" alt="Lava jato com caminhão — frente do imóvel" loading="lazy"></div>
+      <div class="gallery-item reveal" onclick="openLightbox('b.jpeg')"><img src="b.jpeg" alt="Caminhão bitrem sendo lavado no galpão" loading="lazy"></div>
+      <div class="gallery-item reveal" onclick="openLightbox('c.jpeg')"><img src="c.jpeg" alt="Veículos em atendimento simultâneo no lava jato" loading="lazy"></div>
+      <div class="gallery-item reveal" onclick="openLightbox('5.jpeg')"><img src="5.jpeg" alt="Vista da rodovia" loading="lazy"></div>
+      <div class="gallery-item reveal" onclick="openLightbox('7.jpeg')"><img src="7.jpeg" alt="Área de lavagem" loading="lazy"></div>
+      <div class="gallery-item reveal" onclick="openLightbox('10.jpeg')"><img src="10.jpeg" alt="Sinalização lava jato" loading="lazy"></div>
+      <div class="gallery-item reveal" onclick="openLightbox('11.jpeg')"><img src="11.jpeg" alt="Sistema de água" loading="lazy"></div>
+      <div class="gallery-item reveal" onclick="openLightbox('13.jpeg')"><img src="13.jpeg" alt="Vista geral" loading="lazy"></div>
+      <div class="gallery-item reveal" onclick="openLightbox('14.jpeg')"><img src="14.jpeg" alt="Estrutura coberta" loading="lazy"></div>
+      <div class="gallery-item reveal" onclick="openLightbox('15.jpeg')"><img src="15.jpeg" alt="Frente do lote" loading="lazy"></div>
+      <div class="gallery-item reveal" onclick="openLightbox('16.jpeg')"><img src="16.jpeg" alt="Galpão novo" loading="lazy"></div>
+      <div class="gallery-item reveal" onclick="openLightbox('17.jpeg')"><img src="17.jpeg" alt="Área externa" loading="lazy"></div>
+      <div class="gallery-item reveal" onclick="openLightbox('18.jpeg')"><img src="18.jpeg" alt="Detalhe estrutura" loading="lazy"></div>
+      <div class="gallery-item reveal" onclick="openLightbox('20.jpeg')"><img src="20.jpeg" alt="Visão panorâmica" loading="lazy"></div>
+      <div class="gallery-item reveal" onclick="openLightbox('2.jpeg')"><img src="2.jpeg" alt="Telhado galpão" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ VÍDEOS ═══ -->
+<section class="video-section">
+  <p class="section-label reveal">Vídeos do Local</p>
+  <h2 class="section-title reveal">CONHEÇA EM VÍDEO</h2>
+  <div class="video-grid">
+    <div class="video-wrap reveal"><video controls preload="none" poster="a.jpeg"><source src="Video_a.mp4" type="video/mp4"></video><div class="video-label">Caminhão em Atendimento — BR-153</div></div>
+    <div class="video-wrap reveal"><video controls preload="none" poster="5.jpeg"><source src="1.mp4" type="video/mp4"></video><div class="video-label">Tour Lote 1 — Lavador</div></div>
+    <div class="video-wrap reveal"><video controls preload="none" poster="2.jpeg"><source src="3.mp4" type="video/mp4"></video><div class="video-label">Galpão Novo — Construção</div></div>
+    <div class="video-wrap reveal"><video controls preload="none" poster="7.jpeg"><source src="4.mp4" type="video/mp4"></video><div class="video-label">Vista da Rodovia</div></div>
+    <div class="video-wrap reveal"><video controls preload="none" poster="10.jpeg"><source src="6.mp4" type="video/mp4"></video><div class="video-label">Estrutura Metálica</div></div>
+    <div class="video-wrap reveal"><video controls preload="none" poster="13.jpeg"><source src="8.mp4" type="video/mp4"></video><div class="video-label">Área Interna Lote 2</div></div>
+    <div class="video-wrap reveal"><video controls preload="none" poster="15.jpeg"><source src="9.mp4" type="video/mp4"></video><div class="video-label">Visão Geral do Terreno</div></div>
+    <div class="video-wrap reveal"><video controls preload="none" poster="16.jpeg"><source src="12.mp4" type="video/mp4"></video><div class="video-label">Detalhes da Estrutura</div></div>
+    <div class="video-wrap reveal"><video controls preload="none" poster="17.jpeg"><source src="19.mp4" type="video/mp4"></video><div class="video-label">Área Externa — Frente</div></div>
+    <div class="video-wrap reveal"><video controls preload="none" poster="18.jpeg"><source src="22.mp4" type="video/mp4"></video><div class="video-label">Vista Panorâmica</div></div>
+    <div class="video-wrap reveal"><video controls preload="none" poster="20.jpeg"><source src="23.mp4" type="video/mp4"></video><div class="video-label">Infraestrutura de Água</div></div>
+    <div class="video-wrap reveal"><video controls preload="none" poster="11.jpeg"><source src="24.mp4" type="video/mp4"></video><div class="video-label">Acesso pela Rodovia</div></div>
+    <div class="video-wrap reveal"><video controls preload="none" poster="14.jpeg"><source src="25.mp4" type="video/mp4"></video><div class="video-label">Tour Completo do Imóvel</div></div>
+  </div>
+</section>
+
+<!-- ═══ DIFERENCIAIS ═══ -->
+<section class="diferenciais-section">
+  <div class="diferenciais-inner">
+    <p class="section-label reveal">Por que investir?</p>
+    <h2 class="section-title reveal">DIFERENCIAIS DO NEGÓCIO</h2>
+    <div class="diferencial-grid">
+      <div class="diferencial-card reveal"><div class="diferencial-icon">🛣️</div><div class="diferencial-title">BR-153 · Trevo Central</div><div class="diferencial-desc">Às margens da Transbrasiliana no Trevo Central de Santa Tereza — alto fluxo de caminhões, ônibus e veículos 24h</div></div>
+      <div class="diferencial-card reveal"><div class="diferencial-icon">🏗️</div><div class="diferencial-title">Galpão Novo</div><div class="diferencial-desc">Estrutura metálica moderna pronta para qualquer operação comercial, sem precisar construir nada</div></div>
+      <div class="diferencial-card reveal"><div class="diferencial-icon">💧</div><div class="diferencial-title">Infra de Lavagem</div><div class="diferencial-desc">Caixas d'água, fossa, drenagem e piso de lavagem já construídos — operação imediata</div></div>
+      <div class="diferencial-card reveal"><div class="diferencial-icon">📐</div><div class="diferencial-title">840m² Totais</div><div class="diferencial-desc">Dois lotes de 14×30m contíguos para máxima flexibilidade de uso e expansão futura</div></div>
+      <div class="diferencial-card reveal"><div class="diferencial-icon">🚛</div><div class="diferencial-title">Atende Caminhões</div><div class="diferencial-desc">Pé-direito alto e espaço amplo para veículos pesados, bitrens e maquinário de grande porte</div></div>
+      <div class="diferencial-card reveal"><div class="diferencial-icon">💼</div><div class="diferencial-title">Pronto p/ Operar</div><div class="diferencial-desc">Negócio estruturado — comece a faturar desde o primeiro dia sem obras ou espera</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FAQ ═══ -->
+<section class="faq-section">
+  <div class="faq-inner">
+    <p class="section-label reveal">Dúvidas Frequentes</p>
+    <h2 class="section-title reveal">RESPOSTAS RÁPIDAS<br>PARA DECIDIR MELHOR</h2>
+    <div class="faq-list reveal">
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">O negócio está funcionando hoje? <span class="faq-icon">+</span></div>
+        <div class="faq-a"><div class="faq-a-inner">Sim. O lava jato está em operação ativa, com clientela consolidada de caminhoneiros e moradores da região que frequentam o ponto regularmente pela localização estratégica no trevo da BR-153.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">É possível visitar o imóvel presencialmente? <span class="faq-icon">+</span></div>
+        <div class="faq-a"><div class="faq-a-inner">Sim, e é altamente recomendável. Entre em contato pelo WhatsApp (62) 9 9306-1617 para agendar uma visita com o proprietário diretamente, sem necessidade de intermediários ou corretores.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Quais as possibilidades de uso além do lava jato? <span class="faq-icon">+</span></div>
+        <div class="faq-a"><div class="faq-a-inner">O galpão no segundo lote tem pé-direito alto ideal para mecânica, borracharia, auto-elétrica, armazém ou distribuidora. A combinação dos dois lotes oferece versatilidade total para qualquer atividade comercial com acesso para veículos grandes.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Como funciona a negociação com gado? <span class="faq-icon">+</span></div>
+        <div class="faq-a"><div class="faq-a-inner">A negociação com gado é feita diretamente entre comprador e proprietário, com avaliação da quantidade e qualidade do rebanho. Pode ser negociação total ou parcial (gado + complemento em dinheiro ou outro bem). Entre em contato para discutir os detalhes da sua proposta.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">A documentação do imóvel está regularizada? <span class="faq-icon">+</span></div>
+        <div class="faq-a"><div class="faq-a-inner">A documentação está sendo tratada diretamente pelo proprietário. Entre em contato para verificar a situação atual e alinhar todos os detalhes antes de fechar o negócio.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Por que o dono está vendendo um negócio tão bom? <span class="faq-icon">+</span></div>
+        <div class="faq-a"><div class="faq-a-inner">Motivações pessoais do proprietário abriram essa janela de oportunidade. Para quem tem visão empreendedora, isso representa a chance real de adquirir um negócio com infraestrutura consolidada em localização premium por um valor de oportunidade. Quem se mover primeiro, negocia melhor.</div></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA FINAL ═══ -->
+<section class="cta-section" id="contato">
+  <h2>PRONTO PARA<br><span>INVESTIR?</span></h2>
+  <p>Entre em contato agora e agende uma visita. Oportunidade única às margens da BR-153 — não deixe passar.</p>
+  <div class="cta-buttons">
+    <a href="https://wa.me/+556293061617?text=Olá!%20Vi%20o%20anúncio%20do%20Lava%20Jato%20do%20Eudes%20e%20quero%20agendar%20uma%20visita!" class="btn-primary" target="_blank">
+      💬 Agendar Visita pelo WhatsApp
+    </a>
+    <a href="tel:+556293061617" class="btn-secondary">📞 Ligar Agora</a>
+  </div>
+  <div class="contato-cards">
+    <div class="contato-card">
+      <div class="cc-icon">💬</div>
+      <div class="cc-label">WhatsApp</div>
+      <div class="cc-val">(62) 99306-1617</div>
+      <div class="cc-sub">Resposta rápida · Proprietário direto</div>
+    </div>
+    <div class="contato-card">
+      <div class="cc-icon">📞</div>
+      <div class="cc-label">Telefone</div>
+      <div class="cc-val">(62) 99306-1617</div>
+      <div class="cc-sub">Ligar ou mandar mensagem</div>
+    </div>
+    <div class="contato-card">
+      <div class="cc-icon">📍</div>
+      <div class="cc-label">Localização</div>
+      <div class="cc-val" style="font-size:1.1rem;line-height:1.3;">BR-153 · Trevo Central</div>
+      <div class="cc-sub">Santa Tereza de Goiás — GO</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 · Lava Jato do Eudes · Todos os direitos reservados<br>
+  Anúncio de venda particular · BR-153, Trevo Central · Santa Tereza de Goiás — GO<br>
+  <span style="opacity:0.5">Contato direto com o proprietário: (62) 99306-1617</span>
+</footer>
+
+<!-- ═══ LIGHTBOX ═══ -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <img id="lightbox-img" src="" alt="Foto ampliada">
+</div>
+
+<script>
+  // Lightbox
+  function openLightbox(src) {
+    document.getElementById('lightbox-img').src = src;
+    document.getElementById('lightbox').classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  // FAQ accordion
+  function toggleFaq(el) {
+    const item = el.parentElement;
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+    });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Prova social dinâmica — visualizações
+  (function() {
+    const base = 47;
+    const live = base + Math.floor(Math.random() * 8);
+    const el = document.querySelector('.hero-live');
+    if (el) {
+      el.innerHTML = `<div class="live-dot"></div> <strong style="color:var(--ouro)">${live} pessoas</strong>&nbsp;viram este anúncio hoje`;
+    }
+  })();
+</script>
+
+</body>
+</html>
